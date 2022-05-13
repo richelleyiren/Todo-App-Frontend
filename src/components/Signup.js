@@ -29,9 +29,6 @@ export default function Signup() {
                   email,password
                 }
                 )
-                  //  setEmail("");
-                  //  setPassword("");
-                  //  setConfirmPassword("");
 
                    const respond = signed.data
 

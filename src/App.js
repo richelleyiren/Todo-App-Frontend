@@ -2,7 +2,8 @@ import React,{useState, useEffect} from 'react'
 import Todos from './Todos'
 import Todo from './Todo'
 import app from './app.css'
-import { Naviagte, useNavigate } from "react-router-dom"
+import Reset from './components/Reset'
+import { Navigate, useNavigate, NavLink } from "react-router-dom"
 import axios from "axios"
 
 
@@ -90,11 +91,11 @@ export default function App() {
             });
 
             console.log(logs);
-            //navigating to homepage after looging out
+            //navigating to homepage after loging out
             if (logs.data) {
-              navigate("/");
+              navigate("/signup");
               localStorage.removeItem("userId");
-              localStorage.removeItem("name");
+              localStorage.removeItem("email");
             }
           } catch (error) {
             console.log(error.message);
@@ -107,6 +108,8 @@ export default function App() {
     <div>
       <button onClick={logout} className="logout"> Log Out</button>
       <button className="reset"> Reset Password</button>
+      <NavLink to="/reset"> Reset Password</NavLink>
+    
 
       <div className="inputs">
         <input
