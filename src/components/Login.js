@@ -36,7 +36,10 @@ export default function Login() {
 
             if (respond.user) {
               navigate("/app");
+
+              window.localStorage.setItem('userId', JSON.stringify(respond.user._id))
             }
+           
 
          }catch(error){
            console.log(error)
@@ -55,7 +58,7 @@ export default function Login() {
             placeholder="Enter your e-mail"
             onChange={(e) => setEmail(e.target.value)}
           ></input>
-          {!email && <span className="shake" >{emailError} </span>}
+          {!email && <span className="shake">{emailError} </span>}
 
           <input
             type="password"
@@ -64,9 +67,14 @@ export default function Login() {
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-          {!password && <span className="shake" >{passwordError} </span>}
+          {!password && <span className="shake">{passwordError} </span>}
 
           <button onClick={loginUser}> Login </button>
+
+          <h4>
+            <NavLink to="/forgotten-password"> Forgotten password </NavLink>
+          </h4>
+
           <h4>
             Don't have an account? <NavLink to="/signup"> Signup </NavLink>
           </h4>

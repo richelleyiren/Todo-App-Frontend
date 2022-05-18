@@ -19,27 +19,35 @@ export default function Reset() {
             e.preventDefault()
             if(oldpass === ""){
                 setOldErr('Please enter your old password')
-            }else if( newpass ===""){
+            }else if( newpass === ""){
                 setNewErr("Please enter your new password");
             }else if( newpass !== confirmpass){
                 setMatchErr(" Passwords do not match");
             }else if( newpass === oldpass){
                 setSameErr("New password cannot be the same as the old one");
-            }else if (newpass === confirmpass){
+            }
+            
+          
                 const sett = await axios.post('users/reset',{
                     password:oldpass,
-                    newpass
+                    newPassword:newpass
+                    
 
-                }
-                )
-                  const respond = sett.data;
+                })
+                console.log("work");
+                console.log(sett)
+                
 
-                  if (respond.user) {
-                    navigate("/login");
-                  }
-            }else{
-                console.log('error')
-            }
+              if (sett.data) {
+                console.log("Password changed successfully");
+
+                //setting timeout
+                
+                  navigate("/");
+                
+              }
+             
+            
         }catch(error){
             console.log(error)
         }
@@ -50,14 +58,30 @@ export default function Reset() {
         <div>
           <div className="main">
             <h2> Reset Password</h2>
-            
-            <input placeholder=" Enter old password"></input>
+
+            <input
+              type="password"
+              placeholder=" Enter old password"
+              value={oldpass}
+              onChange={(e) => setOldPass(e.target.value)}
+            ></input>
             {!oldpass && <span className="shake">{oldErr} </span>}
-            
-            <input placeholder="Enter new password"></input>
+
+            <input
+              type="password"
+              placeholder="Enter new password"
+              value={newpass}
+              onChange={(e) => setNewPass(e.target.value)}
+            ></input>
             {!newpass && <span className="shake">{newErr} </span>}
-            <input placeholder=" Confirm new password"></input>
-            {!confirmpass && <span className="shake">{matchErr} </span>}
+
+            <input
+              type="password"
+              placeholder=" Confirm new password"
+              value={confirmpass}
+              onChange={(e) => setConfirmPass(e.target.value)}
+            ></input>
+             
 
             <button onClick={resetPass}> Reset Password </button>
           </div>

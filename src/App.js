@@ -15,14 +15,16 @@ export default function App() {
   const [loading, setLoading] = useState(false)
   
   let navigate = useNavigate()
-
+  
+  const id = JSON.parse(localStorage.getItem("userId"))
   const newTodo = async(event) =>{
     try{
       event.preventDefault()
       //posting with axios
       setLoading(true)
 
-      const addTodo = await axios.post("http:localhost:3010/todos", {
+
+      const addTodo = await axios.post(`http:localhost:3010/todos/${id}`, {
         todo:input
       })
 
@@ -76,7 +78,7 @@ export default function App() {
 
         useEffect(() => {
           const fetching = async () =>{
-            const getTodo = await axios.get("http:localhost:3010/todos")
+            const getTodo = await axios.post(`http:localhost:3010/todo-user/${id}`)
 
             setTodos(getTodo.data)
           }
@@ -93,7 +95,7 @@ export default function App() {
             console.log(logs);
             //navigating to homepage after loging out
             if (logs.data) {
-              navigate("/signup");
+              navigate("/");
               localStorage.removeItem("userId");
               localStorage.removeItem("email");
             }
@@ -107,8 +109,8 @@ export default function App() {
   return (
     <div>
       <button onClick={logout} className="logout"> Log Out</button>
-      <button className="reset"> Reset Password</button>
-      <NavLink to="/reset"> Reset Password</NavLink>
+      {/* <button className="reset"> Reset Password</button> */}
+      <NavLink className="reset" to="/reset"> Reset Password</NavLink>
     
 
       <div className="inputs">

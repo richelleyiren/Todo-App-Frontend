@@ -6,6 +6,7 @@ import {BrowserRouter,Routes, Route} from "react-router-dom"
 import Signup from './components/Signup'
 import Login from "./components/Login";
 import Reset from "./components/Reset";
+import ForgottenPass from './components/ForgottenPass'
 
 axios.defaults.baseURL = "http://localhost:3010/";
 // axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
@@ -19,10 +20,11 @@ ReactDOM.render(
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/app" element={<App />} />
-        <Route path="/reset" element={<Reset/>} />
+        <Route path="/reset/:resetToken" element={<Reset />} />
+        <Route path="/forgotten-password" element={<ForgottenPass/>}/>
       </Routes>
     </BrowserRouter>
-    ,
+    
   </React.StrictMode>,
   document.getElementById("root")
 );

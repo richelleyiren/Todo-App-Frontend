@@ -33,21 +33,37 @@ body{
 }
 
 .logout{
-        position: relative;
-        left: 85%;
+         position: relative;
+         left: 85%;
         margin: 2em;
         padding: 0.8em 1em;
         width: 10em;
         background-color: rgb(30, 68, 139);
         color: white;
         border: none;
+        transition: ease-in-out 0.2s;
+        cursor: pointer;
 }
-.reset{
+/*  */
+.logout:hover{
+    background-color: teal;
+
+}
+
+ a{
+    position: relative;
+    left: 65%;
+    text-decoration: none;
+    color:black;
+    padding: 0.8em;
+    border-radius: 2em;
+    font-size: 15px;
+    margin-top: 2em;
+    transition: ease-in-out 0.2s;
+}
+a:hover{
+    background-color: black;
+    color: white;
     
-     margin: 2em 0.2em;
-     padding: 0.8em 1em;
-     width: 10em;
-     background-color: tomato;
-     color: white;
-     border: none;
+
 }
