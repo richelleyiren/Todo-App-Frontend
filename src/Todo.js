@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import todo from './todo.css'
+import todo from './styling/todo.css'
 
 export default function Todo({todo,del,update}) {
   const[strike, setStrike] = useState(false);

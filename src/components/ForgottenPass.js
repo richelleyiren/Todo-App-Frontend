@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Successful from "../components/Successful";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import '../styling/forver.scss'
 
 
 export default function ForgottenPass() {
@@ -44,14 +45,17 @@ export default function ForgottenPass() {
     return success ? (
       <Successful />
     ) : (
-      <div>
-        <div className=" card">
+      <div className="outbody">
+        <div className="image-side">
+          <div className="logo"> tickyTasky </div>
+        </div>
+        <div className="forgotten-card">
           <h2> Forgotten Password</h2>
           <input
             type="text"
             name="email"
             value={email}
-            placeholder="Enter an e-mail"
+            placeholder="Enter your e-mail address"
             onChange={(e) => setEmail(e.target.value)}
           ></input>
           {!email && <span className="shake">{error} </span>}

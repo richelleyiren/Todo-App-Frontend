@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:ital,wght@1,500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+.body {
+    display: flex;
+     .logo {
+         font-size: 3em;
+         font-family: 'Fredoka One',
+             cursive;
+         color: tomato;
+         margin: 0.8em 1.5em;
+     }
+
+
+    .image-side {
+        
+        width: 50%;
+        min-height: 100%;
+        background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.76)) , url(../sign.webp);
+        background-size: cover;
+    }
+    .image-side2 {
+        width: 50%;
+        min-height: 100vh;
+        background-image:linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.76)) , url(../login.webp);
+        background-size: cover;
+    }
+
+    .card {
+        height: 100vh;
+    }
+}
+
+.body2 {
+  
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+         margin: 13em 11em;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 0.7em;
+            font-size: 1.7em;
+        }
+
+
+        input {
+            width: 23em;
+            height: 3em;
+            margin: 10px;
+            padding: 1em 2em;
+            border: solid black 1px;
+            border-radius: 0.5em;
+            font-size: 15px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    button {
+        width: 22em;
+        height: 3em;
+        margin: 15px auto;
+        padding: 1em auto;
+        border: solid 1px;
+        border-radius: 0.5em;
+        font-size: 16px;
+        background-color: palevioletred;
+        color: white;
+    }
+
+    h4 {
+        text-align: center;
+        margin-top: 1em;
+    }
+    .forgot{
+        color: purple;
+    }
+    .signlink,.loginlink{
+        color: palevioletred;
+    }
+
+
+}
+
+.shake{
+    color: red;
+    text-align: center;
+    
+}
+
+

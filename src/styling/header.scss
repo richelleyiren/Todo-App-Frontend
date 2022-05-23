@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mainy{
+    min-height: 60vh;
+    background-color: black;
+    padding-top: 2em;
+    background-image: url(../todo.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding:1.5em 5em;
+    background-color:rgba(0, 0, 0, 0.541);
+    margin: auto 6em;
+    border: solid white 2px;
+    color: white;
+    
+    .link{
+        background-color:palevioletred;
+        color: white;
+        padding:0.5em 1.5em;
+        border-radius: 2em;
+        text-decoration: none;
+    }
+
+    .slink{
+        color: white;
+        padding:0.5em 1.5em;
+        text-decoration: none;
+        
+    }
+    
+    .logo{
+        h3{
+           
+        }
+    }
+    
+}

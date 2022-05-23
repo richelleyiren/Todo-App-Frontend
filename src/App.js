@@ -1,10 +1,11 @@
 import React,{useState, useEffect} from 'react'
 import Todos from './Todos'
 import Todo from './Todo'
-import app from './app.css'
 import Reset from './components/Reset'
 import { Navigate, useNavigate, NavLink } from "react-router-dom"
 import axios from "axios"
+import './styling/taskpage.scss'
+
 
 
 
@@ -105,20 +106,69 @@ export default function App() {
         };
 
 
+
+  const date = new Date()
+  const month = date.getMonth() 
+  const day = date.getDate()
+  const year = date.getFullYear()
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const mont = months[month]
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  const dayss = date.getDay()
+  const eday = days[dayss]
+
+  const nth = day === 1 || 21 || 31 ? "st" : "th"
+
+
+
+  const fullDate = eday +", " + day + nth + " " +  mont + " " + year
+
+  const time = date.getHours()
+  const min = date.getMinutes()
+
+  const ampm = time >= 12 ? " pm" : "am"
+
+  const zero = min < 10 ? `0${min}`: min
+
+  const timey = time +":"+zero + ampm
+  const shit = date.toLocaleString()
+
+   
   
   return (
-    <div>
-      <button onClick={logout} className="logout"> Log Out</button>
-      {/* <button className="reset"> Reset Password</button> */}
-      <NavLink className="reset" to="/reset"> Reset Password</NavLink>
-    
+    <div className=" main-body">
+      <div className=" header">
+        <div className="logo"> tickyTasky </div>
 
-      <div className="inputs">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
+        <div>
+          <NavLink className="reset" to="/reset/:resetToken">
+            Reset Password
+          </NavLink>
+          <button onClick={logout} className="logout">
+            Log Out
+          </button>
+        </div>
+      </div>
+
+      <div className=" time-space">
+
+        <div className="dnt">
+          <span> {fullDate} </span>
+          <span> {timey} </span>
+        </div>
+        <hr></hr>
+
+      </div>
+
+      <div className="title">
+        <div className="inputs">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+        </div>
+
         <div className="inbs">
           <button disabled={!input} className="inb inb1" onClick={newTodo}>
             Add to list

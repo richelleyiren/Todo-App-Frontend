@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './reset.css'
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, useNavigate, useParams } from "react-router-dom";
 
 export default function Reset() {
     const [oldpass, setOldPass] = useState('')
@@ -13,6 +12,7 @@ export default function Reset() {
     const [sameErr, setSameErr] = useState("");
     
     let navigate = useNavigate()
+    const {resetToken } = useParams()
 
     const resetPass = async (e) =>{
         try{
@@ -28,7 +28,7 @@ export default function Reset() {
             }
             
           
-                const sett = await axios.post('users/reset',{
+                const sett = await axios.post(`users/reset/${resetToken}`,{
                     password:oldpass,
                     newPassword:newpass
                     
@@ -54,9 +54,9 @@ export default function Reset() {
 
     }
     return (
-      <div className="modal">
-        <div>
-          <div className="main">
+      <div className="outbodys">
+        <div className="modal">
+          <div className="mainn card">
             <h2> Reset Password</h2>
 
             <input

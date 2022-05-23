@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:ital,wght@1,500&display=swap');
+// font-family: 'Fredoka One', cursive;
+// font-family: 'Montserrat', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    // background-color:honeydew;
+background-image: linear-gradient(to bottom right, honeydew, #f0f8ff);
+    
+ border: solid peachpuff 0.5px;
+ min-height: 4em;
+ display: flex;
+ justify-content: space-between;
+ padding: 1em 5em;
+ box-shadow: 12px 9px 20px -12px rgba(0, 0, 0, 0.6);
+ margin-bottom: 1em;
+
+ .logo{
+     font-size: 2em;
+     font-family: 'Fredoka One', cursive;
+     color: tomato;
+
+ }
+
+ .logout{
+     margin: 0 2em;
+     padding: 0.7em 2em;
+     font-size: 15px;
+     border: none;
+     border-radius: 2em;
+     color: white;
+     background-color:#b0c4de;
+ }
+ .reset{
+      padding: 1em;
+      font-size: 15px;
+      text-decoration: none;
+      color:black;
+      
+ }
+
+}
+
+.title{
+    margin: 4em auto;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+
+    input{
+        width: 40vw;
+        height: 2em;
+        padding: 1.5em;
+        border-radius: .5em;
+        border: none;
+        border: black solid 1px;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    button{
+          width: 10vw;
+          min-height: 1em;
+          padding: 0.9em;
+          border-radius: .5em;
+          border: none;
+          border: black solid 1px;
+          margin: auto 1em;
+          background-color: tomato;
+          color: white;
+    }
+}
+
+.time-space{
+    .dnt {
+        margin: 2em 3em 1em 3em;
+        letter-spacing: 2px;
+        font-size: 1.5em;
+        display: flex;
+        justify-content: space-around;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+    }
+
+    hr {
+        width: 60%;
+       margin-left: auto;
+       margin-right: auto;
+       border: solid palevioletred 0.5px;
+        
+    }
+}
+.main-body{
+    background-color: rgb(234, 234, 250);
+    background: ghostwhite;
+}

@@ -1,10 +1,10 @@
 
 import React, { useState } from "react";
 import axios from "axios";
-import signup from "../signup.css";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ForgottenPass from "./ForgottenPass";
+import '../styling/forver.scss'
 
 export default function ResetForgotten() {
     const [newpass, setNewPass] = useState('')
@@ -35,10 +35,14 @@ export default function ResetForgotten() {
      }
 
     return (
-      <div>
+      <div className="outbody forgotten">
+        <div className="image-side">
+          <div className="logo"> tickyTasky </div>
+        </div>
+
         <div className=" card">
           <h2>Reset Password</h2>
-          <input
+          <input className="type"
             type="password"
             name="password"
             value={newpass}
@@ -47,7 +51,7 @@ export default function ResetForgotten() {
           />
           {/* {!password && <span className="shake">{passwordError} </span>} */}
 
-          <input
+          <input className="type"
             type="password"
             name="conFirmPassword"
             value={confirmnew}
@@ -59,7 +63,6 @@ export default function ResetForgotten() {
           )} */}
 
           <button onClick={resetForgot}> Reset Password </button>
-
         </div>
       </div>
     );

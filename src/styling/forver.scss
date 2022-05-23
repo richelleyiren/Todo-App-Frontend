@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:ital,wght@1,500&display=swap');
+// font-family: 'Fredoka One', cursive;
+// font-family: 'Montserrat', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.outbody{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.76)),url(./photo.webp);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 100vh;  
+}
+.outbodys {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.76)), url(./todo.webp);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 100vh;
+}
+.logo {
+    font-size: 3em;
+    font-family: 'Fredoka One',
+        cursive;
+    color: tomato;
+    margin: 0.8em 1.5em;
+}
+
+.forgotten-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12em;
+    color: #f0fff0;
+
+    h2{
+       font-family: 'Montserrat', sans-serif;
+       margin-bottom: 1em;
+       letter-spacing: 2px;
+       font-size: 2em;
+       color: paleturquoise;
+    }
+    input{
+        width: 30em;
+        height: 3em;
+        padding: 1em 2em;
+        border: solid black 1px;
+        margin-bottom: 2em;
+        font-size: 1em;
+        border-radius: 1.4em;
+
+        &:focus{
+            outline: none;
+        }
+    }
+    button{
+        width: 30em;
+        border-radius: 1.4em;
+        border: none;
+        padding: 1em 2em;
+        font-size: 1em;
+        background-color: palevioletred;
+        color: white;
+
+    }
+}
+.verified-card,.check-card{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-top: 12em;
+
+      h2 {
+          font-family: 'Montserrat', sans-serif;
+          margin-bottom: 1em;
+          letter-spacing: 2px;
+          font-size: 2em;
+          color:palegreen;
+      }
+      p{
+          color: white;
+          font-size: 2em;
+      }
+
+}
+
+//landing page
+.home{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.76)),url(../landing.webp);
+    height: 100vh;
+    background-repeat: no-repeat;
+    object-fit:cover;
+}
+
+
+//forgotten reset page
+.forgotten{
+
+   .card {
+       display: flex;
+       flex-direction: column;
+       margin: 13em 11em;
+
+       h2 {
+           text-align: center;
+           margin-bottom: 0.7em;
+           font-size: 1.7em;
+           color: palegreen;
+
+       }
+
+
+       .type{
+           width: 22em;
+           height: 3em;
+           margin: 10px auto;
+           padding: 1em 2em;
+           border: solid black 1px;
+           border-radius: 0.5em;
+           font-size: 15px;
+
+           &:focus {
+               outline: none;
+           }
+       }
+
+        button {
+        width: 21em;
+        height: 3em;
+        margin: 15px auto;
+        padding: 1em auto;
+        border: solid 1px;
+        border-radius: 0.5em;
+        font-size: 16px;
+        background-color: palevioletred;
+        color: white;
+    }
+    
+    
+}
+}
+
+//reset page
+.modal{
+    .card {
+        display: flex;
+        flex-direction: column;
+        padding: 13em 31em;
+        
+
+        h2 {
+            text-align: center;
+            margin-bottom: 0.7em;
+            font-size: 1.7em;
+            color: rgb(238, 84, 110);
+
+        }
+          input {
+              width: 22em;
+              height: 3em;
+              margin: 10px auto;
+              padding: 1em 2em;
+              border: solid black 1px;
+              border-radius: 0.5em;
+              font-size: 15px;
+
+              &:focus {
+                  outline: none;
+              }
+          }
+           button {
+               width: 21em;
+               height: 3em;
+               margin: 15px auto;
+               padding: 1em auto;
+               border: solid 1px;
+               border-radius: 0.5em;
+               font-size: 16px;
+               background-color: palegreen;
+               color: black;
+           }
+
+}
+}
+
+ 
